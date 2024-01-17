@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <h1>Дневной список дел</h1>
-      <div className='wrapper'>
+      <div className='wrapper-addTodo'>
         <input className='todo-input' onChange={(e) => setValue(e.target.value)} placeholder='Добавить новый элемент'></input>
         <button className='add-btn' onClick={() => { dispatch(addTodo(value)) }}>Добавить</button>
       </div>
@@ -25,10 +25,12 @@ function App() {
           </div>
         ))}
       </div>
-      <hr></hr>
-      <div className='wrapper-footer'>
-        <p>1/3 дело завершено</p>
-        <button className='clear-btn'>Очистить</button>
+      <div className='footer'>
+        <hr className='line'></hr>
+        <div className='progress-and-clear'>
+          <p>1/3 дело завершено</p>
+          <button className='clear-btn'>Очистить</button>
+        </div>
       </div>
     </div>
   );
