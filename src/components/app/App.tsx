@@ -10,12 +10,17 @@ function App() {
 
   const [value, setValue] = useState('');
 
+  const handleAddTodo = () => {
+    dispatch(addTodo(value))
+    setValue('')
+  }
+
   return (
     <div className="App">
       <h1>Дневной список дел</h1>
       <div className='wrapper-addTodo'>
-        <input className='todo-input' onChange={(e) => setValue(e.target.value)} placeholder='Добавить новый элемент'></input>
-        <button className='add-btn' onClick={() => { dispatch(addTodo(value)) }}>Добавить</button>
+        <input className='todo-input' onChange={(e) => setValue(e.target.value)} value={value} placeholder='Добавить новый элемент'></input>
+        <button className='add-btn' onClick={() => { value !== '' && handleAddTodo() }}>Добавить</button>
       </div>
       <div className='todo-list'>
         {todoList.map((item) => (
