@@ -1,0 +1,163 @@
+.App {
+  width: 1000px;
+  min-height: 670px;
+  background-color: #FFFFFF;
+  border-radius: 32px;
+  transform: translate(-50%, -50%);
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+  padding: 72px 200px 48px 200px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #11175E;
+}
+
+.todo-input {
+  outline: none;
+  border: 1px solid #EEEEEE;
+  width: 600px;
+  height: 58px;
+  margin-top: 32px;
+  font-size: 16px;
+  padding: 7px 7px 7px 20px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.todo-list {
+  margin-top: 48px;
+  padding-left: 20px;
+  margin-bottom: 169px;
+}
+
+.add-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 7px;
+  width: 136px;
+  height: 44px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2D70FD;
+  color: #FFFFFF;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.todo-checkbox {
+  appearance: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #EEEEEE;
+}
+
+.todo:hover .todo-checkbox {
+  border-color: blue;
+  cursor: pointer;
+}
+
+.todo:hover .todo-item {
+  color: blue;
+  cursor: pointer;
+}
+
+.todo-item {
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #001747;
+}
+
+.wrapper-footer {
+  display: flex;
+  padding: 24px 20px 0px;
+  justify-content: space-between;
+  color: #B1BACB;
+  font-size: 16px;
+}
+
+.clear-btn {
+  border: none;
+  background: none;
+  color: #B1BACB;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+@media (max-width: 1024px) {
+  .App {
+    width: 550px;
+    padding: 72px 46px 48px 46px;
+  }
+
+  .todo-input {
+    width: 458px;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .add-btn {
+    width: 99px;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    width: 435px;
+    padding: 72px 46px 48px 46px;
+  }
+
+  .todo-input {
+    width: 345px;
+  }
+
+  .add-btn {
+    width: 65px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 300px;
+    padding: 72px 10px 48px 10px;
+  }
+
+  .todo-input {
+    width: 280px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .add-btn {
+    width: 85px;
+    font-size: 14px;
+    position: relative;
+  }
+
+  .wrapper-footer {
+    display: block;
+  }
+
+  .clear-btn {
+    margin-top: 10px;
+  }
+}
