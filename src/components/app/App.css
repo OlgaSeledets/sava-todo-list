@@ -3,11 +3,9 @@
   min-height: 670px;
   background-color: #FFFFFF;
   border-radius: 32px;
-  transform: translate(-50%, -50%);
-  position: absolute; 
-  top: 50%; 
-  left: 50%;
+  margin: 20px auto;
   padding: 72px 200px 48px 200px;
+  position: relative;
 }
 
 h1 {
@@ -25,7 +23,7 @@ h1 {
   padding: 7px 7px 7px 20px;
 }
 
-.wrapper {
+.wrapper-addTodo {
   position: relative;
 }
 
@@ -81,7 +79,14 @@ h1 {
   color: #001747;
 }
 
-.wrapper-footer {
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 48px;
+  width: 600px;
+}
+
+.progress-and-clear {
   display: flex;
   padding: 24px 20px 0px;
   justify-content: space-between;
@@ -114,6 +119,10 @@ h1 {
   .add-btn {
     width: 99px;
   }
+
+  .footer {
+    width: 460px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -129,6 +138,10 @@ h1 {
   .add-btn {
     width: 65px;
     font-size: 12px;
+  }
+
+  .footer {
+    width: 340px;
   }
 }
 
@@ -153,11 +166,15 @@ h1 {
     position: relative;
   }
 
-  .wrapper-footer {
+  .progress-and-clear {
     display: block;
   }
 
   .clear-btn {
     margin-top: 10px;
+  }
+
+  .footer {
+    width: 280px;
   }
 }
