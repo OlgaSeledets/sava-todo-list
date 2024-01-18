@@ -33,7 +33,7 @@ function App() {
       <div className='footer'>
         <hr className='line'></hr>
         <div className='progress-and-clear'>
-          <p>1/{todoList.length} дело завершено</p>
+          <p>{todoList.filter((item) => item.completed === true).length}/{todoList.length} дело завершено</p>
           <button className='clear-btn'>Очистить</button>
         </div>
       </div>
