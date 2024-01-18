@@ -60,6 +60,20 @@ h1 {
   width: 32px;
   height: 32px;
   border: 1px solid #EEEEEE;
+  position: relative;
+  cursor: pointer;
+}
+
+.todo-checkbox::before {
+  content: '';
+  background-image: url('../../../public/img/ok.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  margin: 8px;
+  transition: opacity 0.2s ease;
 }
 
 .todo:hover .todo-checkbox {
