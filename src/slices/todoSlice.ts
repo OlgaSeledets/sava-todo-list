@@ -1,4 +1,4 @@
-import { combineReducers, createSlice, nanoid } from '@reduxjs/toolkit'
+import { createSlice, nanoid } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface Item {
@@ -24,9 +24,12 @@ const todosSlice = createSlice({
     setStatus: (state, action: PayloadAction<{completed: boolean; id: string}>) => {
       const completedItemIndex = state.findIndex((item) => item.id === action.payload.id)
       state[completedItemIndex].completed = action.payload.completed
+    },
+    clearList: () => {
+      return []
     }
   },
 })
 
-export const { addTodo, setStatus } = todosSlice.actions;
+export const { addTodo, setStatus, clearList} = todosSlice.actions;
 export default todosSlice.reducer;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { addTodo, setStatus } from "../../slices/todoSlice";
+import { addTodo, setStatus, clearList } from "../../slices/todoSlice";
 
 function App() {
   const todoList = useSelector((state: RootState) => state);
@@ -34,7 +34,7 @@ function App() {
         <hr className='line'></hr>
         <div className='progress-and-clear'>
           <p>{todoList.filter((item) => item.completed === true).length}/{todoList.length} дело завершено</p>
-          <button className='clear-btn'>Очистить</button>
+          <button className='clear-btn' onClick={() => dispatch(clearList())}>Очистить</button>
         </div>
       </div>
     </div>
