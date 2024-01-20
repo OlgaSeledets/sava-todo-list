@@ -8,7 +8,7 @@ interface Item {
 }
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: 'TodoList',
   initialState: [] as Item[],
   reducers: {
     addTodo: {
@@ -31,5 +31,5 @@ const todosSlice = createSlice({
   },
 })
 
-export const { addTodo, setStatus, clearList} = todosSlice.actions;
+export const { addTodo, setStatus, clearList } = todosSlice.actions;
 export default todosSlice.reducer;

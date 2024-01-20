@@ -3,6 +3,8 @@ import './App.css';
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { addTodo, setStatus, clearList } from "../../slices/todoSlice";
+import { Button } from "../button/Button"
+import { TodoItem } from '../todo-item/TodoItem';
 
 function App() {
   const todoList = useSelector((state: RootState) => state);
@@ -19,22 +21,19 @@ function App() {
     <div className="App">
       <h1>Дневной список дел</h1>
       <div className='wrapper-addTodo'>
-        <input className='todo-input' onChange={(e) => setValue(e.target.value)} value={value} placeholder='Добавить новый элемент'></input>
-        <button className='add-btn' onClick={() => { value !== '' && handleAddTodo() }}>Добавить</button>
+        <input className='todo-input' onChange={(e) => setValue(e.target.value)} value={value} placeholder='Добавить новый элемент'/>
+        <Button customStyles={'add-btn'} caption={'Добавить'} action={() => value !== '' && handleAddTodo()} />
       </div>
       <div className='todo-list'>
-        {todoList.map((item) => (
-          <div className='todo' key={item.id}>
-            <input type='checkbox' className='todo-checkbox' style={{ backgroundColor: item.completed ? "#00D8A7" : "#FFFFFF" }} checked={item.completed} onChange={() => dispatch(setStatus({ completed: !item.completed, id: item.id }))}></input>
-            <p className='todo-item' style={{ textDecoration: item.completed ? "line-through" : "none" }}>{item.text}</p>
-          </div>
+        {todoList.map(item => (
+          <TodoItem key={item.id} id={item.id} completed={item.completed} text={item.text} />
         ))}
       </div>
       <div className='footer'>
         <hr className='line'></hr>
         <div className='progress-and-clear'>
-          <p>{todoList.filter((item) => item.completed === true).length}/{todoList.length} дело завершено</p>
-          <button className='clear-btn' onClick={() => dispatch(clearList())}>Очистить</button>
+          <p>{todoList.filter(item => item.completed === true).length}/{todoList.length} дело завершено</p>
+          <Button customStyles={'clear-btn'} caption={'Очистить'} action={() => dispatch(clearList())} />
         </div>
       </div>
     </div>
