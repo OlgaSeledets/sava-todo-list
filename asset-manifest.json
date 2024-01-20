@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/sava-todo-list/static/css/main.b9ea0c55.css",
+    "main.js": "/sava-todo-list/static/js/main.d6eb62cf.js",
+    "index.html": "/sava-todo-list/index.html",
+    "static/media/ok.svg": "/sava-todo-list/static/media/ok.c1d4a77bdcc60bab01cb.svg",
+    "main.b9ea0c55.css.map": "/sava-todo-list/static/css/main.b9ea0c55.css.map",
+    "main.d6eb62cf.js.map": "/sava-todo-list/static/js/main.d6eb62cf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b9ea0c55.css",
+    "static/js/main.d6eb62cf.js"
+  ]
+}
